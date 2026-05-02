@@ -1,4 +1,5 @@
-import { Instagram, Mail, Music, Sparkles } from "lucide-react";
+import { Instagram, Mail, Music } from "lucide-react";
+import { Logo } from "@/components/ui/Logo";
 
 const productLinks = [
   { label: "Como funciona", href: "#how" },
@@ -9,7 +10,7 @@ const productLinks = [
 const companyLinks = [
   { label: "Termos", href: "#" },
   { label: "Privacidade", href: "#" },
-  { label: "Contato", href: "mailto:hello@stickerswap.app" },
+  { label: "Contato", href: "mailto:contato@trocafigurinhas.app" },
 ];
 
 export function Footer() {
@@ -17,13 +18,8 @@ export function Footer() {
     <footer className="bg-surface-card px-30 pb-8 pt-15">
       <div className="flex flex-col items-start justify-between gap-12 md:flex-row">
         <div className="flex flex-col gap-4">
-          <a href="#top" className="flex items-center gap-2">
-            <span className="grid h-9 w-9 place-items-center rounded-xl bg-brand">
-              <Sparkles className="h-5 w-5 text-white" aria-hidden />
-            </span>
-            <span className="font-display text-[22px] font-extrabold text-ink">
-              StickerSwap
-            </span>
+          <a href="#top">
+            <Logo />
           </a>
           <p className="max-w-[240px] text-sm leading-relaxed text-ink-muted">
             Trocas mais inteligentes
@@ -76,7 +72,7 @@ export function Footer() {
 
       <div className="mt-10 flex flex-col items-start justify-between gap-4 border-t border-surface-raised pt-6 md:flex-row md:items-center">
         <p className="text-[13px] text-ink-subtle">
-          © 2026 StickerSwap. Todos os direitos reservados.
+          © 2026 Troca Figurinhas. Todos os direitos reservados.
         </p>
         <div className="flex items-center gap-3">
           {[Instagram, Music, Mail].map((Icon, i) => (
