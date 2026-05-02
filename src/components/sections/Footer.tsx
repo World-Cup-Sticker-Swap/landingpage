@@ -1,5 +1,7 @@
 import { Instagram, Mail, Music } from "lucide-react";
+import { useState } from "react";
 import { Logo } from "@/components/ui/Logo";
+import { ContactModal } from "@/components/ui/ContactModal";
 
 const productLinks = [
   { label: "Como funciona", href: "#how" },
@@ -7,13 +9,19 @@ const productLinks = [
   { label: "FAQ", href: "#faq" },
 ];
 
-const companyLinks = [
-  { label: "Termos", href: "#" },
-  { label: "Privacidade", href: "#" },
-  { label: "Contato", href: "mailto:contato@trocafigurinhas.app" },
-];
-
 export function Footer() {
+  const [contactOpen, setContactOpen] = useState(false);
+
+  const companyLinks: {
+    label: string;
+    href?: string;
+    onClick?: () => void;
+  }[] = [
+    { label: "Termos", href: "#" },
+    { label: "Privacidade", href: "#" },
+    { label: "Contato", onClick: () => setContactOpen(true) },
+  ];
+
   return (
     <footer className="bg-surface-card px-30 pb-8 pt-15">
       <div className="flex flex-col items-start justify-between gap-12 md:flex-row">
@@ -57,15 +65,26 @@ export function Footer() {
             <span className="font-display text-sm font-extrabold text-ink">
               Empresa
             </span>
-            {companyLinks.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                className="text-sm font-medium text-ink-muted transition hover:text-ink"
-              >
-                {l.label}
-              </a>
-            ))}
+            {companyLinks.map((l) =>
+              l.onClick ? (
+                <button
+                  key={l.label}
+                  type="button"
+                  onClick={l.onClick}
+                  className="text-left text-sm font-medium text-ink-muted transition hover:text-ink"
+                >
+                  {l.label}
+                </button>
+              ) : (
+                <a
+                  key={l.label}
+                  href={l.href}
+                  className="text-sm font-medium text-ink-muted transition hover:text-ink"
+                >
+                  {l.label}
+                </a>
+              )
+            )}
           </div>
         </div>
       </div>
@@ -75,34 +94,37 @@ export function Footer() {
           © 2026 Troca Figurinhas. Todos os direitos reservados.
         </p>
         <div className="flex items-center gap-3">
-          {[
-            {
-              Icon: Instagram,
-              href: "https://www.instagram.com/worldstickerswap",
-              label: "Instagram",
-              external: true,
-            },
-            { Icon: Music, href: "#", label: "TikTok", external: false },
-            {
-              Icon: Mail,
-              href: "mailto:contato@trocafigurinhas.app",
-              label: "E-mail",
-              external: false,
-            },
-          ].map(({ Icon, href, label, external }) => (
-            <a
-              key={label}
-              href={href}
-              target={external ? "_blank" : undefined}
-              rel={external ? "noopener noreferrer" : undefined}
-              className="grid h-9 w-9 place-items-center rounded-full bg-surface-raised text-ink-soft transition hover:bg-brand-soft hover:text-brand-dark"
-              aria-label={label}
-            >
-              <Icon className="h-[18px] w-[18px]" aria-hidden />
-            </a>
-          ))}
+          <a
+            href="https://www.instagram.com/worldstickerswap"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="grid h-9 w-9 place-items-center rounded-full bg-surface-raised text-ink-soft transition hover:bg-brand-soft hover:text-brand-dark"
+            aria-label="Instagram"
+          >
+            <Instagram className="h-[18px] w-[18px]" aria-hidden />
+          </a>
+          <a
+            href="#"
+            className="grid h-9 w-9 place-items-center rounded-full bg-surface-raised text-ink-soft transition hover:bg-brand-soft hover:text-brand-dark"
+            aria-label="TikTok"
+          >
+            <Music className="h-[18px] w-[18px]" aria-hidden />
+          </a>
+          <button
+            type="button"
+            onClick={() => setContactOpen(true)}
+            className="grid h-9 w-9 place-items-center rounded-full bg-surface-raised text-ink-soft transition hover:bg-brand-soft hover:text-brand-dark"
+            aria-label="Abrir formulário de contato"
+          >
+            <Mail className="h-[18px] w-[18px]" aria-hidden />
+          </button>
         </div>
       </div>
+
+      <ContactModal
+        open={contactOpen}
+        onClose={() => setContactOpen(false)}
+      />
     </footer>
   );
 }
