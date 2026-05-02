@@ -8,9 +8,9 @@ import { FAQ } from "@/components/sections/FAQ";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/sections/Footer";
 
-export default function HomePage() {
+export function App() {
   return (
-    <main className="mx-auto max-w-page bg-surface">
+    <main className="mx-auto max-w-page bg-surface font-sans">
       <Header />
       <Hero />
       <ValueStrip />

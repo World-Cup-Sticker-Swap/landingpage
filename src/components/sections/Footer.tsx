@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Instagram, Mail, Music, Sparkles } from "lucide-react";
 
 const productLinks = [
@@ -18,14 +17,14 @@ export function Footer() {
     <footer className="bg-surface-card px-30 pb-8 pt-15">
       <div className="flex flex-col items-start justify-between gap-12 md:flex-row">
         <div className="flex flex-col gap-4">
-          <Link href="/" className="flex items-center gap-2">
+          <a href="#top" className="flex items-center gap-2">
             <span className="grid h-9 w-9 place-items-center rounded-xl bg-brand">
               <Sparkles className="h-5 w-5 text-white" aria-hidden />
             </span>
             <span className="font-display text-[22px] font-extrabold text-ink">
               StickerSwap
             </span>
-          </Link>
+          </a>
           <p className="max-w-[240px] text-sm leading-relaxed text-ink-muted">
             Trocas mais inteligentes
           </p>
@@ -48,13 +47,13 @@ export function Footer() {
               Produto
             </span>
             {productLinks.map((l) => (
-              <Link
+              <a
                 key={l.label}
                 href={l.href}
                 className="text-sm font-medium text-ink-muted transition hover:text-ink"
               >
                 {l.label}
-              </Link>
+              </a>
             ))}
           </div>
 
@@ -63,13 +62,13 @@ export function Footer() {
               Empresa
             </span>
             {companyLinks.map((l) => (
-              <Link
+              <a
                 key={l.label}
                 href={l.href}
                 className="text-sm font-medium text-ink-muted transition hover:text-ink"
               >
                 {l.label}
-              </Link>
+              </a>
             ))}
           </div>
         </div>
