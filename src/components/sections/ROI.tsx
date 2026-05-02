@@ -25,7 +25,7 @@ export function ROI() {
             ~R$ 7.000
           </span>
           <p className="text-sm leading-relaxed text-white/60">
-            Pacotinho atrás de pacotinho até completar 670 figurinhas.
+            Pacotinho atrás de pacotinho até completar 960 figurinhas.
             Estimativa do matemático Frederico Torres.
           </p>
         </article>
