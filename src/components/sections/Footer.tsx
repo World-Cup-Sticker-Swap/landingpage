@@ -75,12 +75,28 @@ export function Footer() {
           © 2026 Troca Figurinhas. Todos os direitos reservados.
         </p>
         <div className="flex items-center gap-3">
-          {[Instagram, Music, Mail].map((Icon, i) => (
+          {[
+            {
+              Icon: Instagram,
+              href: "https://www.instagram.com/worldstickerswap",
+              label: "Instagram",
+              external: true,
+            },
+            { Icon: Music, href: "#", label: "TikTok", external: false },
+            {
+              Icon: Mail,
+              href: "mailto:contato@trocafigurinhas.app",
+              label: "E-mail",
+              external: false,
+            },
+          ].map(({ Icon, href, label, external }) => (
             <a
-              key={i}
-              href="#"
+              key={label}
+              href={href}
+              target={external ? "_blank" : undefined}
+              rel={external ? "noopener noreferrer" : undefined}
               className="grid h-9 w-9 place-items-center rounded-full bg-surface-raised text-ink-soft transition hover:bg-brand-soft hover:text-brand-dark"
-              aria-label="social"
+              aria-label={label}
             >
               <Icon className="h-[18px] w-[18px]" aria-hidden />
             </a>
