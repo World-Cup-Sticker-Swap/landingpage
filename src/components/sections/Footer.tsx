@@ -1,7 +1,8 @@
-import { Instagram, Mail, Music } from "lucide-react";
+import { Instagram, Mail } from "lucide-react";
 import { useState } from "react";
 import { Logo } from "@/components/ui/Logo";
 import { ContactModal } from "@/components/ui/ContactModal";
+import { TikTokIcon } from "@/components/ui/TikTokIcon";
 
 const productLinks = [
   { label: "Como funciona", href: "#how" },
@@ -104,11 +105,13 @@ export function Footer() {
             <Instagram className="h-[18px] w-[18px]" aria-hidden />
           </a>
           <a
-            href="#"
+            href="https://www.tiktok.com/@worldcupstickerswap"
+            target="_blank"
+            rel="noopener noreferrer"
             className="grid h-9 w-9 place-items-center rounded-full bg-surface-raised text-ink-soft transition hover:bg-brand-soft hover:text-brand-dark"
             aria-label="TikTok"
           >
-            <Music className="h-[18px] w-[18px]" aria-hidden />
+            <TikTokIcon className="h-[18px] w-[18px]" />
           </a>
           <button
             type="button"
