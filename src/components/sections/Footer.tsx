@@ -24,8 +24,8 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-surface-card px-30 pb-8 pt-15">
-      <div className="flex flex-col items-start justify-between gap-12 md:flex-row">
+    <footer className="bg-surface-card px-5 pb-8 pt-12 sm:px-8 sm:pt-15 md:px-12 lg:px-30">
+      <div className="flex flex-col items-start justify-between gap-10 md:flex-row md:gap-12">
         <div className="flex flex-col gap-4">
           <a href="#top">
             <Logo />
@@ -46,7 +46,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex gap-20">
+        <div className="flex gap-12 sm:gap-20">
           <div className="flex flex-col gap-3.5">
             <span className="font-display text-sm font-extrabold text-ink">
               Produto
@@ -90,8 +90,8 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mt-10 flex flex-col items-start justify-between gap-4 border-t border-surface-raised pt-6 md:flex-row md:items-center">
-        <p className="text-[13px] text-ink-subtle">
+      <div className="mt-8 flex flex-col items-start justify-between gap-4 border-t border-surface-raised pt-6 sm:mt-10 md:flex-row md:items-center">
+        <p className="text-[12px] text-ink-subtle sm:text-[13px]">
           © 2026 Troca Figurinhas. Todos os direitos reservados.
         </p>
         <div className="flex items-center gap-3">

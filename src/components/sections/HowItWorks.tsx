@@ -31,24 +31,27 @@ const steps: Step[] = [
 
 export function HowItWorks() {
   return (
-    <section id="how" className="flex flex-col items-center gap-15 px-30 py-25">
-      <div className="flex flex-col items-center gap-4 text-center">
-        <span className="text-[13px] font-bold uppercase tracking-[2px] text-brand">
+    <section
+      id="how"
+      className="flex flex-col items-center gap-10 px-5 py-16 sm:px-8 sm:py-20 md:px-12 md:gap-15 md:py-25 lg:px-30"
+    >
+      <div className="flex flex-col items-center gap-3 text-center sm:gap-4">
+        <span className="text-[12px] font-bold uppercase tracking-[2px] text-brand sm:text-[13px]">
           Como funciona
         </span>
-        <h2 className="max-w-[720px] font-display text-5xl font-extrabold leading-[1.1] text-ink">
+        <h2 className="max-w-[720px] font-display text-3xl font-extrabold leading-[1.1] text-ink sm:text-4xl lg:text-5xl">
           Como funciona na prática
         </h2>
-        <p className="max-w-[720px] text-lg leading-relaxed text-ink-muted">
+        <p className="max-w-[720px] text-base leading-relaxed text-ink-muted sm:text-lg">
           Encurte o caminho entre o álbum incompleto e a próxima troca certa.
         </p>
       </div>
 
-      <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-3">
+      <div className="grid w-full grid-cols-1 gap-4 sm:gap-6 md:grid-cols-3">
         {steps.map((step) => (
           <article
             key={step.number}
-            className="flex flex-col gap-5 rounded-3xl bg-surface-card p-8"
+            className="flex flex-col gap-4 rounded-3xl bg-surface-card p-6 sm:p-8 sm:gap-5"
           >
             <span
               className={`grid h-12 w-12 place-items-center rounded-2xl ${step.bg}`}
@@ -57,10 +60,10 @@ export function HowItWorks() {
                 {step.number}
               </span>
             </span>
-            <h3 className="font-display text-[22px] font-extrabold leading-tight text-ink">
+            <h3 className="font-display text-xl font-extrabold leading-tight text-ink sm:text-[22px]">
               {step.title}
             </h3>
-            <p className="text-[15px] leading-relaxed text-ink-muted">
+            <p className="text-sm leading-relaxed text-ink-muted sm:text-[15px]">
               {step.description}
             </p>
           </article>
