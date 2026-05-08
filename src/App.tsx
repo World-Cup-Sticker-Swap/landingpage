@@ -1,3 +1,4 @@
+import { Route, Routes } from "react-router-dom";
 import { Header } from "@/components/sections/Header";
 import { Hero } from "@/components/sections/Hero";
 import { ValueStrip } from "@/components/sections/ValueStrip";
@@ -7,11 +8,11 @@ import { ROI } from "@/components/sections/ROI";
 import { FAQ } from "@/components/sections/FAQ";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/sections/Footer";
+import { PrivacyPolicy } from "@/components/sections/PrivacyPolicy";
 
-export function App() {
+function Home() {
   return (
-    <main className="mx-auto max-w-page bg-surface font-sans">
-      <Header />
+    <>
       <Hero />
       <ValueStrip />
       <HowItWorks />
@@ -19,6 +20,18 @@ export function App() {
       <ROI />
       <FAQ />
       <FinalCTA />
+    </>
+  );
+}
+
+export function App() {
+  return (
+    <main className="mx-auto max-w-page bg-surface font-sans">
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/privacidade" element={<PrivacyPolicy />} />
+      </Routes>
       <Footer />
     </main>
   );

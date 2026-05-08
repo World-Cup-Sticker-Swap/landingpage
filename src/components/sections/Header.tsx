@@ -1,11 +1,12 @@
 import { Download, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Logo } from "@/components/ui/Logo";
 
 const navItems = [
-  { label: "Como funciona", href: "#how" },
-  { label: "Recursos", href: "#features" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Como funciona", href: "/#how" },
+  { label: "Recursos", href: "/#features" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export function Header() {
@@ -22,9 +23,9 @@ export function Header() {
 
   return (
     <header className="relative flex items-center justify-between px-5 py-4 sm:px-8 md:px-12 md:py-5 lg:px-30">
-      <a href="#top" onClick={() => setOpen(false)}>
+      <Link to="/" onClick={() => setOpen(false)}>
         <Logo />
-      </a>
+      </Link>
 
       <nav className="hidden items-center gap-8 md:flex">
         {navItems.map((item) => (

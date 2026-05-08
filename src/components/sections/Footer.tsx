@@ -1,13 +1,14 @@
 import { Instagram, Mail } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Logo } from "@/components/ui/Logo";
 import { ContactModal } from "@/components/ui/ContactModal";
 import { TikTokIcon } from "@/components/ui/TikTokIcon";
 
 const productLinks = [
-  { label: "Como funciona", href: "#how" },
-  { label: "Recursos", href: "#features" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Como funciona", href: "/#how" },
+  { label: "Recursos", href: "/#features" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export function Footer() {
@@ -16,10 +17,10 @@ export function Footer() {
   const companyLinks: {
     label: string;
     href?: string;
+    to?: string;
     onClick?: () => void;
   }[] = [
-    { label: "Termos", href: "#" },
-    { label: "Privacidade", href: "#" },
+    { label: "Privacidade", to: "/privacidade" },
     { label: "Contato", onClick: () => setContactOpen(true) },
   ];
 
@@ -27,9 +28,9 @@ export function Footer() {
     <footer className="bg-surface-card px-5 pb-8 pt-12 sm:px-8 sm:pt-15 md:px-12 lg:px-30">
       <div className="flex flex-col items-start justify-between gap-10 md:flex-row md:gap-12">
         <div className="flex flex-col gap-4">
-          <a href="#top">
+          <Link to="/">
             <Logo />
-          </a>
+          </Link>
           <p className="max-w-[240px] text-sm leading-relaxed text-ink-muted">
             Trocas mais inteligentes
           </p>
@@ -66,17 +67,31 @@ export function Footer() {
             <span className="font-display text-sm font-extrabold text-ink">
               Empresa
             </span>
-            {companyLinks.map((l) =>
-              l.onClick ? (
-                <button
-                  key={l.label}
-                  type="button"
-                  onClick={l.onClick}
-                  className="text-left text-sm font-medium text-ink-muted transition hover:text-ink"
-                >
-                  {l.label}
-                </button>
-              ) : (
+            {companyLinks.map((l) => {
+              if (l.onClick) {
+                return (
+                  <button
+                    key={l.label}
+                    type="button"
+                    onClick={l.onClick}
+                    className="text-left text-sm font-medium text-ink-muted transition hover:text-ink"
+                  >
+                    {l.label}
+                  </button>
+                );
+              }
+              if (l.to) {
+                return (
+                  <Link
+                    key={l.label}
+                    to={l.to}
+                    className="text-sm font-medium text-ink-muted transition hover:text-ink"
+                  >
+                    {l.label}
+                  </Link>
+                );
+              }
+              return (
                 <a
                   key={l.label}
                   href={l.href}
@@ -84,8 +99,8 @@ export function Footer() {
                 >
                   {l.label}
                 </a>
-              )
-            )}
+              );
+            })}
           </div>
         </div>
       </div>
