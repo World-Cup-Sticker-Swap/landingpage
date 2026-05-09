@@ -9,6 +9,7 @@ import { FAQ } from "@/components/sections/FAQ";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/sections/Footer";
 import { PrivacyPolicy } from "@/components/sections/PrivacyPolicy";
+import { DeleteAccount } from "@/components/sections/DeleteAccount";
 
 function Home() {
   return (
@@ -31,6 +32,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/privacidade" element={<PrivacyPolicy />} />
+        <Route path="/excluir-conta" element={<DeleteAccount />} />
       </Routes>
       <Footer />
     </main>
