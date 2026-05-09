@@ -370,6 +370,103 @@ const sections: Section[] = [
       </>
     ),
   },
+  {
+    title: "14. Exclusão de conta e dados",
+    body: (
+      <>
+        <p>
+          Esta seção descreve como solicitar a exclusão da sua conta e dos
+          seus dados no aplicativo <strong>Troca Figurinhas</strong>,
+          desenvolvido por <strong>35.974.878 PATRICIA ALMEIDA QUEIROZ</strong>
+          {" "}(CNPJ 35.974.878/0001-02).
+        </p>
+
+        <p>
+          <strong>Como solicitar a exclusão</strong>
+        </p>
+        <ol className="my-2 list-decimal pl-6 [&_li]:my-1">
+          <li>
+            Envie um e-mail para{" "}
+            <a
+              href="mailto:contato@trocafigurinhascopa.com?subject=Solicita%C3%A7%C3%A3o%20de%20exclus%C3%A3o%20de%20conta%20%E2%80%93%20Troca%20Figurinhas"
+              className="text-brand-dark underline"
+            >
+              contato@trocafigurinhascopa.com
+            </a>{" "}
+            com o assunto <em>“Solicitação de exclusão de conta – Troca
+            Figurinhas”</em>, ou use o formulário de contato no rodapé desta
+            página.
+          </li>
+          <li>
+            Informe o <strong>e-mail cadastrado no app</strong> (o mesmo
+            usado para login) para que possamos localizar a conta.
+          </li>
+          <li>
+            Por segurança, podemos enviar uma confirmação para esse e-mail
+            antes de processar a exclusão, garantindo que a solicitação
+            partiu do titular da conta.
+          </li>
+          <li>
+            A exclusão é processada manualmente em até{" "}
+            <strong>30 dias corridos</strong> a partir da confirmação.
+          </li>
+        </ol>
+
+        <p>
+          <strong>O que é excluído</strong>
+        </p>
+        <p>
+          Após o processamento, removemos permanentemente dos nossos
+          sistemas:
+        </p>
+        <ul>
+          <li>Dados de cadastro (nome, e-mail, senha e foto de perfil);</li>
+          <li>
+            Sua coleção de figurinhas, álbuns e configurações do perfil;
+          </li>
+          <li>
+            Histórico de matches, mensagens trocadas no app e avaliações;
+          </li>
+          <li>Localização aproximada e demais preferências de uso.</li>
+        </ul>
+
+        <p>
+          <strong>O que pode ser mantido (e por quanto tempo)</strong>
+        </p>
+        <p>
+          Alguns dados podem ser retidos, de forma segregada, mesmo após a
+          exclusão da conta, quando houver fundamento legal para isso:
+        </p>
+        <ul>
+          <li>
+            <strong>Registros de transações</strong> (assinaturas e compras
+            no app): mantidos pelo prazo exigido pela legislação fiscal e
+            tributária, em geral de até <strong>5 anos</strong>.
+          </li>
+          <li>
+            <strong>Registros de acesso e logs de aplicação:</strong>{" "}
+            mantidos por até <strong>6 meses</strong>, conforme o art. 15 do
+            Marco Civil da Internet (Lei nº 12.965/2014).
+          </li>
+          <li>
+            <strong>Dados necessários ao exercício regular de direitos</strong>{" "}
+            em processos judiciais, administrativos ou arbitrais, pelos
+            prazos prescricionais aplicáveis.
+          </li>
+          <li>
+            <strong>Comunicações trocadas com o suporte</strong>, mantidas
+            por até <strong>2 anos</strong> para fins de auditoria e
+            qualidade de atendimento.
+          </li>
+        </ul>
+        <p>
+          Esses dados retidos ficam restritos às finalidades acima e não são
+          utilizados para perfil de uso, marketing ou recomendação dentro do
+          app.
+        </p>
+      </>
+    ),
+  },
 ];
 
 export function PrivacyPolicy() {
