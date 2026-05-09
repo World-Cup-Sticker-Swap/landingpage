@@ -1,11 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { DeleteAccountModal } from "@/components/ui/DeleteAccountModal";
 
 const lastUpdate = "9 de maio de 2026";
 
-const MAILTO_HREF =
-  "mailto:contato@trocafigurinhascopa.com?subject=Solicita%C3%A7%C3%A3o%20de%20exclus%C3%A3o%20de%20conta%20%E2%80%93%20Troca%20Figurinhas&body=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20a%20exclus%C3%A3o%20da%20minha%20conta%20no%20app%20Troca%20Figurinhas.%0A%0AE-mail%20cadastrado%20no%20app%3A%20";
-
 export function DeleteAccount() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);
@@ -42,14 +42,15 @@ export function DeleteAccount() {
             </h2>
             <ol className="my-2 list-decimal pl-6 [&_li]:my-1">
               <li>
-                Clique no botão abaixo (ou envie um e-mail manualmente para{" "}
+                Clique no botão abaixo para abrir o formulário de
+                solicitação. Se preferir, envie um e-mail manualmente para{" "}
                 <a
                   href="mailto:contato@trocafigurinhascopa.com"
                   className="text-brand-dark underline"
                 >
                   contato@trocafigurinhascopa.com
-                </a>
-                ) com o assunto{" "}
+                </a>{" "}
+                com o assunto{" "}
                 <em>
                   “Solicitação de exclusão de conta – Troca Figurinhas”
                 </em>
@@ -71,12 +72,13 @@ export function DeleteAccount() {
             </ol>
 
             <div className="mt-3">
-              <a
-                href={MAILTO_HREF}
+              <button
+                type="button"
+                onClick={() => setModalOpen(true)}
                 className="inline-flex items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-dark"
               >
                 Solicitar exclusão por e-mail
-              </a>
+              </button>
             </div>
           </article>
 
@@ -166,6 +168,11 @@ export function DeleteAccount() {
           </article>
         </div>
       </div>
+
+      <DeleteAccountModal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+      />
     </section>
   );
 }
